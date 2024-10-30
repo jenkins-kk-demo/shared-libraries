@@ -1,10 +1,10 @@
 def vulnerability(String imageName) {
-    sh  ''' 
+    sh  """
         trivy image ${imageName} \
         --severity CRITICAL \
         --exit-code 1 \
         --format json -o trivy-image-CRITICAL-results.json
-    '''
+    """
 }
 
 def reportConverter() {
